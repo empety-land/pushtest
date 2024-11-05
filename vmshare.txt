@@ -1,0 +1,5 @@
+Linux共享文件夹的设置
+1.先在选项里面设置好共享文件夹的路径，执行vmware-hgfsclient命令查看该路径
+2.在Ubuntu的mnt目录下创建hgfs目录
+3.进行最重要的挂载操作，执行命令vmhgfs-fuse .host:/vmshare /mnt/hgfs（vmshare即是第一步查询所得路径，直接复制就可以了，注意两个地方各有一个空格）如果之前挂载过需要取消挂载，执行命令umount /mnt/hgfs
+4.设置开机挂载（如果没有这一步的话，每次重启系统都要重新进行一次挂载操作，很麻烦）进入/etc/fstab目录进行编辑，在文件的最后增添一行以下内容：.host:/vmshare /mnt/hgfs fuse.vmhgfs-fuse allow_other,uid=1000,gid=1000,umask=022 0 0（和第三步同理），保存退出以后重启一下就可以了
