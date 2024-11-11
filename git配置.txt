@@ -1,0 +1,2 @@
+.gitconfig文件位置：C:\Users\ASUS
+config文件位置：C:\Users\ASUS\.ssh
