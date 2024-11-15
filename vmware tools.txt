@@ -1,0 +1,8 @@
+vmware tools的安装与彻底删除：
+1.安装：重新安装的时候如果行不通，在虚拟机设置里面手动修改一下vmware tools的更新选项就好了；剩下的只需要点安装，下载完成后直接解压复制到你喜欢的目录（我个人倾向于不要涉及到根目录，不然权限问题很麻烦，我自己复制到dwonload目录下）然后在文件夹的对应目录下运行install.sh的文件就行，最后记得重启系统
+2.彻底卸载：彻底卸载主要涉及到一些命令，直接在桌面终端运行这些命令就可以，卸载以后还是记得重启系统，命令如下：
+sudo vmware-uninstall-tools.pl
+sudo apt-get remove open-vm-tools
+sudo apt-get remove --auto-remove open-vm-tools
+sudo apt-get purge open-vm-tools
+sudo apt-get purge --auto-remove open-vm-tools
